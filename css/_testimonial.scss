@@ -1,0 +1,81 @@
+#testimonial {
+    @extend %sectionStyle;
+    background-color: #FEF7F6;
+
+    .container {
+        .row-1 {
+            @extend %containerTitleStyles;
+        }
+
+        .row-2 {
+            .item {
+                width: 100%;
+                // max-width: 300px;
+                color: $second-color;
+                background: $primary-color;
+                border-radius: 1rem;
+                padding: 3rem;
+                transition: all .3s linear;
+
+                .top {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    font-size: 1.6rem;
+                    color: $second-color;
+                    margin-bottom: 1rem;
+
+                    .title {
+                        font-weight: 600;
+                    }
+
+                    span {
+                        font-size: 3.6rem;
+                        color: rgba(235, 102, 82, 0.15);
+                    }
+                }
+
+                .desc {
+                    font-size: 1.4rem;
+                    color: $second-color;
+                    font-weight: 600;
+                    border-bottom: 1px solid #ddd;
+                    padding-bottom: 2rem;
+                }
+
+                .thumb {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-top: 2rem;
+
+                    .profile {
+                        display: flex;
+                        align-items: center;
+                        gap: 1.5rem;
+                    }
+
+                    .ratings {
+                        color: #e59819;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:575px) {
+    #testimonial {
+        .container {
+            .row-2 {
+                .item {
+
+                    .thumb {
+                        flex-direction: column;
+                        gap: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}

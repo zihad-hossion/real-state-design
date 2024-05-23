@@ -1,0 +1,93 @@
+#help-category {
+    @extend %sectionStyle;
+    color: $second-color;
+
+    .container {
+        .row-1 {
+            text-align: center;
+            margin-bottom: 5rem;
+
+            .title {
+                font-size: 3rem;
+                font-weight: 600;
+            }
+
+            .desc {
+                font-size: 1.4rem;
+            }
+        }
+
+        .row-2 {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+
+            .icon-box {
+                text-align: center;
+
+                .card {
+                    border-radius: 1rem;
+                    padding: 6rem 3.5rem 2rem;
+                    transition: all .3s linear;
+
+                    img {
+                        width: 150px;
+                        height: 150px;
+                        margin-bottom: 1rem;
+                    }
+
+                    .title {
+                        font-size: 2rem;
+                        font-weight: 600;
+                        margin-bottom: 1.5rem;
+                    }
+
+                    .desc {
+                        font-size: 1.4rem;
+                        line-height: 1.7;
+                        margin-bottom: 2.5rem;
+                    }
+
+                    &:hover {
+                        box-shadow: 0 10px 40px rgba(24, 26, 32, .05);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:992px) {
+    #help-category {
+        .container {
+            .row-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+}
+
+@media (max-width:550px) {
+    #help-category {
+        .container {
+            .row-1 {
+                margin-bottom: 3rem;
+
+                .title {
+                    font-size: 2.25rem;
+                }
+
+                .desc {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .row-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}

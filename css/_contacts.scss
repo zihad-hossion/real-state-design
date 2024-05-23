@@ -1,0 +1,101 @@
+#contacts {
+    background-color: #F7F7F7;
+    height: 300px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 10rem;
+
+    .container {
+        width: 100%;
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .col-1 {
+                color: $second-color;
+
+                .title {
+                    font-size: 3rem;
+                    font-weight: 600;
+                    margin-bottom: 1rem;
+                }
+
+                .desc {
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                }
+            }
+
+            .col-2 {
+                a:first-child {
+                    color: $second-color;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+
+                .button {
+                    padding: 1.3rem 3rem;
+
+                    &:last-child {
+                        color: $primary-color;
+                        margin-left: 2rem;
+
+                        i {
+                            margin-right: .75rem;
+                            font-size: 1.5rem;
+                            transform: rotate(1deg);
+                        }
+                    }
+
+                    &:hover {
+                        border-color: $color-1 !important;
+                        background-color: $color-1 !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:992px) {
+    #contacts {
+        margin-bottom: 0;
+
+        .container {
+            .row {
+                flex-direction: column;
+                gap: 2rem;
+
+                .col-2 {
+                    text-align: center;
+
+                    .button {
+                        &:last-child {
+                            margin-left: 2rem;
+                            margin-top: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:768px) {
+    #contacts {
+        .container {
+            .row {
+                .col-1 {
+                    .title {
+                        font-size: 2rem;
+                        margin-bottom: .5rem;
+                    }
+                }
+            }
+        }
+    }
+}

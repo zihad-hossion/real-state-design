@@ -1,0 +1,233 @@
+$primary-color: #ffffff;
+$second-color: #181a20;
+$color-1: #eb6753;
+$color-2: #ee4c34;
+$color-3: #bebdbd;
+$bg-light: #fef4f3;
+$bg-white: #f7f7f7;
+$Transition: all .25s linear;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+}
+
+.wrapper {
+    position: relative;
+}
+
+//global animation
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.container {
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+@media(min-width: 576px) {
+    .container {
+        max-width: 540px;
+        padding: unset;
+    }
+}
+
+@media(min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media(min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media(min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+        // padding-left: 5rem;
+        // padding-right: 5rem;
+    }
+}
+
+@media(min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+}
+
+.bg-black {
+    color: $primary-color;
+    background-color: #282A30 !important;
+}
+
+.bg-white {
+    color: $second-color;
+    background-color: $primary-color;
+}
+
+//regular button style
+.btn {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background-color: transparent;
+    border: 1px solid $second-color;
+    border-radius: 1rem;
+    padding: 1.6rem 3rem;
+    transition: $Transition;
+    cursor: pointer;
+
+    &:hover {
+        color: $primary-color;
+        background: $second-color;
+    }
+
+    i {
+        font-size: 1.5rem;
+        margin-left: .75rem;
+        transform: rotate(-45deg);
+    }
+}
+
+//section common style
+%sectionStyle {
+    padding: 12rem 0;
+    position: relative;
+}
+
+//common style for container 
+%containerTitleStyles {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 7rem;
+    margin-top: 1rem;
+
+    .col-1 {
+        color: $second-color;
+
+        .title {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .desc {
+            font-size: 1.4rem;
+            font-weight: 400;
+        }
+    }
+
+    a {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $second-color;
+        transition: $Transition;
+
+        i {
+            transform: rotate(-45deg);
+            margin-left: 1.25rem;
+        }
+
+        &:hover {
+            color: $color-1;
+        }
+    }
+
+    div:last-child {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width:992px) {
+    %sectionStyle {
+        padding: 6rem 0;
+    }
+
+    %containerTitleStyles {
+        div:last-child {
+            align-self: unset;
+        }
+    }
+}
+
+@media (max-width:768px) {
+    %sectionStyle {
+        padding: 4rem 0;
+    }
+
+    %containerTitleStyles {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+
+@media (max-width:575px) {
+    %sectionStyle {
+        padding: 3rem 0;
+    }
+
+    %containerTitleStyles {
+        gap: 2.5rem;
+        margin-bottom: 5rem;
+
+        .col-1 {
+            .title {
+                font-size: 2rem;
+                margin-bottom: .5rem;
+            }
+
+            .desc {
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+
+.swiperBtn {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    button {
+        font-size: 1.5rem;
+        background-color: transparent;
+    }
+}
